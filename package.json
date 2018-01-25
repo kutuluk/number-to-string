@@ -1,0 +1,75 @@
+{
+  "name": "@kutuluk/number-to-string",
+  "description": "Fast converting of a number to a string on any base (radix)",
+  "author": "kutuluk",
+  "keywords": [
+    "number",
+    "string",
+    "base",
+    "radix",
+    "converter",
+    "encoder",
+    "decoder"
+  ],
+  "homepage": "https://github.com/kutuluk/number-to-string",
+  "bugs": {
+    "url": "https://github.com/kutuluk/number-to-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kutuluk/number-to-string.git"
+  },
+  "license": "MIT",
+  "version": "0.0.2",
+  "main": "./lib/number-to-string",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "ie >= 7"
+            ]
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-es2015-modules-umd"
+    ]
+  },
+  "scripts": {
+    "eslint": "eslint src/number-to-string.js",
+    "test": "mocha",
+    "bench": "node ./benchmark/benchmark.js",
+    "babel": "babel ./src/number-to-string.js --out-file ./lib/number-to-string.js",
+    "uglifyjs": "uglifyjs ./lib/number-to-string.js -o ./dist/number-to-string.min.js -c -m",
+    "build": "npm run eslint && npm run babel && npm run uglifyjs",
+    "publish-to-npm": "npm install && npm run build && npm test && npm run bench && npm publish"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "base58": "^1.0.1",
+    "base62": "^1.2.1",
+    "benchmark": "^2.1.4",
+    "chai": "^4.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-chai-friendly": "^0.4.0",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^4.0.0",
+    "radix-64": "^1.0.4",
+    "radixer": "^1.0.0",
+    "uglify-js": "^3.1.2"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {}
+}
