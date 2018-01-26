@@ -5,6 +5,7 @@
   "keywords": [
     "number",
     "string",
+    "any",
     "base",
     "radix",
     "converter",
@@ -20,7 +21,7 @@
     "url": "git+ssh://git@github.com/kutuluk/number-to-string.git"
   },
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/number-to-string",
   "babel": {
     "presets": [

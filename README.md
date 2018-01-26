@@ -9,32 +9,35 @@ Fast converting of a number to a string on any base (radix).
 - Where possible extremely fast due to bitwise operations
 - Does not add extra padding characters for more efficient compression
 - Built-in support for bases from 2 to 85
+- With default alphabet up to base 64 inclusive generates url-safe strings and for all built-in bases generates json-safe (non-escaping) strings
 - Possibility to create a converter to any base with custom alphabet
 - ES3 compatible
 
 ## Installation
 
 ```sh
-npm install number-to-string
+npm install @kutuluk/number-to-string
 ```
 
 ## API
 
 #### `ntos(number, radix)`
-Takes a number, discards a fractional part and returns a string.
 
-#### `ston(ascii, radix)`
-Takes a string and returns a number.
+Takes a number, discards the fractional part, and returns a string of radix representation. If number not a number throw error.
 
-#### `stos(from, to)`
-Returns a function for converting from one base to another.
+#### `ston(string, radix)`
+Takes a string of radix representation and returns a number.
+
+#### `stos(source, destination)`
+Returns function that converts the string from source base to destination base.
 
 
 ## Usage
 
 ### Browser directly
 ```html
-<script src="https://unpkg.com/number-to-string/dist/number-to-string.min.js"></script>
+<script src="https://unpkg.com/@kutuluk/number-to-string/dist/number-to-string.min.js"></script>
+
 
 <script>
   var decToHex = numberToString.stos(10, 16);
